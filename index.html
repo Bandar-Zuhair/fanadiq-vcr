@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <title>فوتشر</title>
+    <link rel="stylesheet" href="voucher.css" />
+
+</head>
+
+
+
+
+
+
+
+<body id="body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Choose Hotel Location Section -->
+    <section id="create_new_voucher_section">
+
+        <div class="section_title_text_div">
+            <h1 class="section_title_text_class">New Voucher</h1>
+        </div>
+
+        <div class="voucher_info_input_div">
+
+            <input type="text" id="company_logo_input_id" placeholder="Company Logo" readonly autocomplete="off"
+                onclick="showOverlay('company_names_dropdown')" style="cursor: pointer;">
+
+            <input type="text" id="confirmation_number_input_id" placeholder="Confirmation No" autocomplete="off">
+
+            <input type="text" id="property_names_input_id" placeholder="Property Name" readonly autocomplete="off"
+                onclick="showOverlay('property_names_dropdown')" style="cursor: pointer;">
+
+            <input type="text" id="total_unit_input_id" placeholder="Total Unit" readonly autocomplete="off"
+                onclick="showOverlay('total_unit_dropdown')" style="cursor: pointer;">
+
+            <input type="text" id="room_type_input_id" placeholder="Room Type" autocomplete="off">
+
+            <input type="text" id="bed_type_input_id" placeholder="Bed Type" autocomplete="off">
+
+            <input type="text" id="check_in_input_id" placeholder="Check In" autocomplete="off">
+
+            <input type="text" id="check_out_input_id" placeholder="Check Out" autocomplete="off">
+
+            <input type="text" id="total_nights_input_id" placeholder="Total Nights" autocomplete="off">
+
+            <input type="text" id="meal_plan_input_id" placeholder="Meal Plan" autocomplete="off">
+
+            <input type="text" id="guest_name_input_id" placeholder="Guest Name" autocomplete="off">
+
+        </div>
+
+
+        <div class="submit_voucher_data_div two_icons_insert_data_package_pdf_div">
+
+            <button id="enter_voucher_data_button_id" onclick="enterVoucherData()">Enter</button>
+
+            <ion-icon name="color-wand-outline" id="insert_new_hotel_name_maually_icon_id"
+                onclick="playSoundEffect('success'); insertNewHotelNameMaually()"
+                style="background: rgb(0, 87, 116);"></ion-icon>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Company Names Logo -->
+    <div id="company_names_dropdown" class="searchable_names_dropdown_class">
+        <div class="search_bar_div_class">
+            <input type="text" id="company_names_search_bar_input_id" class="search_bar_input_class" placeholder="بحث.."
+                autocomplete="off">
+        </div>
+        <div class="company_names_options_dropdown_class">
+            <h3 style="color: red;">Delete</h3>
+            <h3 logo_arabic_name="اجواء-السماء">Ajwaa Sky</h3>
+            <h3 logo_arabic_name="اركاب">Erkab</h3>
+            <h3 logo_arabic_name="اركان">Arkan</h3>
+            <h3 logo_arabic_name="ارياف">Ariaf</h3>
+            <h3 logo_arabic_name="اسفار-الضيافة">Dheyafah</h3>
+            <h3 logo_arabic_name="اسفاري">My Travels</h3>
+            <h3 logo_arabic_name="افكار السفر">Travel Ideas</h3>
+            <h3 logo_arabic_name="الاجنحة السبعة">Seven Wings</h3>
+            <h3 logo_arabic_name="الاسطورة">Alostura</h3>
+            <h3 logo_arabic_name="البتار">Al Battar</h3>
+            <h3 logo_arabic_name="الجمان">Aljuman</h3>
+            <h3 logo_arabic_name="الجناح-الجوي">Air Wing Travel</h3>
+            <h3 logo_arabic_name="الحياة-السعيدة">Happy Life</h3>
+            <h3 logo_arabic_name="جولدن">Golden</h3>
+            <h3 logo_arabic_name="الرحال-العربي">Arabian Traveler</h3>
+            <h3 logo_arabic_name="الرحلة-الذكية">Smart Trip</h3>
+            <h3 logo_arabic_name="الريام">Alrayam</h3>
+            <h3 logo_arabic_name="الزاجل">Al Zajil</h3>
+            <h3 logo_arabic_name="السيف">Seef</h3>
+            <h3 logo_arabic_name="الشافعي">Al Shafai</h3>
+            <h3 logo_arabic_name="الصفوة">Safwah</h3>
+            <h3 logo_arabic_name="الصقر-الاول">1st Falcon</h3>
+            <h3 logo_arabic_name="العروبة-الذهبية">Alaroub Aldahabeyah</h3>
+            <h3 logo_arabic_name="العز">Al Ezz</h3>
+            <h3 logo_arabic_name="العطلة-الجميلة">Beautiful Holiday</h3>
+            <h3 logo_arabic_name="الفخامة">Alfakhamah</h3>
+            <h3 logo_arabic_name="الفرسان">Alfursan</h3>
+            <h3 logo_arabic_name="القشعمي">Ksatrvl</h3>
+            <h3 logo_arabic_name="القطيف">TQ</h3>
+            <h3 logo_arabic_name="الكنان">Alkinan</h3>
+            <h3 logo_arabic_name="المثالية">Perfect</h3>
+            <h3 logo_arabic_name="المعالم">Al Maalem</h3>
+            <h3 logo_arabic_name="المكان-العالي">Almakan Alaaly</h3>
+            <h3 logo_arabic_name="الهباش">Al Habash</h3>
+            <h3 logo_arabic_name="الهدف">Alhadf</h3>
+            <h3 logo_arabic_name="اندو-فور-عرب">Indo4arab</h3>
+            <h3 logo_arabic_name="اهدافي">Ahdafi</h3>
+            <h3 logo_arabic_name="اوتاد">Awtad</h3>
+            <h3 logo_arabic_name="باقة-سفر">Paqah Safar</h3>
+            <h3 logo_arabic_name="بن-غيث">Binghaith</h3>
+            <h3 logo_arabic_name="بوردينق">Boarding Tourism</h3>
+            <h3 logo_arabic_name="بوردينق-تايم">Boarding Time</h3>
+            <h3 logo_arabic_name="بيسان">Bisan</h3>
+            <h3 logo_arabic_name="تاج-الماسة">Taj Almasah</h3>
+            <h3 logo_arabic_name="تذكرة-السفر">Travel Ticket</h3>
+            <h3 logo_arabic_name="ترافل">Travel</h3>
+            <h3 logo_arabic_name="بوابة-السفر">Travel Gate</h3>
+            <h3 logo_arabic_name="ترافيلا">Travella</h3>
+            <h3 logo_arabic_name="تروبيكانا">Tropicana</h3>
+            <h3 logo_arabic_name="تروس">Trus</h3>
+            <h3 logo_arabic_name="جزيرة-العطلات">Holidays Island</h3>
+            <h3 logo_arabic_name="جسر-العالم">World Bridge</h3>
+            <h3 logo_arabic_name="حجوزات">Hojozat</h3>
+            <h3 logo_arabic_name="حجوزات-داود">Dawod Booking</h3>
+            <h3 logo_arabic_name="دانه">Fly Dana</h3>
+            <h3 logo_arabic_name="دريم">Dream</h3>
+            <h3 logo_arabic_name="رحلاتك">Rehlatak</h3>
+            <h3 logo_arabic_name="رحلتك-دوت-كوم">Rehlatak Dot com</h3>
+            <h3 logo_arabic_name="رحلاتكم">Rahltkom</h3>
+            <h3 logo_arabic_name="سافر">Safer</h3>
+            <h3 logo_arabic_name="سام-تيكت">Sam Ticket</h3>
+            <h3 logo_arabic_name="سكاي-جلوبال">Sky Global</h3>
+            <h3 logo_arabic_name="سكاي-الدولية">Sky International</h3>
+            <h3 logo_arabic_name="سيدرا">Sedra</h3>
+            <h3 logo_arabic_name="شوف-العالم">Shoof Eldonia</h3>
+            <h3 logo_arabic_name="طريق-السفر">Travel Way</h3>
+            <h3 logo_arabic_name="طيار">Tayar</h3>
+            <h3 logo_arabic_name="عطلة-صيف">Summer Holiday</h3>
+            <h3 logo_arabic_name="عناية-السفر">Travel Care</h3>
+            <h3 logo_arabic_name="عين-ماليزيا">Eye of Malaysia</h3>
+            <h3 logo_arabic_name="فلاي-ون">Fly One</h3>
+            <h3 logo_arabic_name="فلاي-ويك">Fly Week</h3>
+            <h3 logo_arabic_name="فيد">Vid</h3>
+            <h3 logo_arabic_name="ابتكار">Ibtekar</h3>
+            <h3 logo_arabic_name="كلاسيك">Classic</h3>
+            <h3 logo_arabic_name="كنوز">Konooz</h3>
+            <h3 logo_arabic_name="كيان">Kyan Holidays</h3>
+            <h3 logo_arabic_name="مباشر">Mubasher</h3>
+            <h3 logo_arabic_name="محطات-السفر">Travel Destinations</h3>
+            <h3 logo_arabic_name="محطات-العبور">TransitStops Travel</h3>
+            <h3 logo_arabic_name="مداراتي">Medaraty</h3>
+            <h3 logo_arabic_name="مدن-السفر">Travel Cities</h3>
+            <h3 logo_arabic_name="مرتحل">Murtahel</h3>
+            <h3 logo_arabic_name="مسافر-الصحراء">Musafer Alsahra</h3>
+            <h3 logo_arabic_name="مواكب">Mwakeb</h3>
+            <h3 logo_arabic_name="نجوم-السفر">Travel Stars</h3>
+            <h3 logo_arabic_name="نور-الرضا">Noor Alreda</h3>
+            <h3 logo_arabic_name="هالو-بونشاك">Halo Puncak</h3>
+            <h3 logo_arabic_name="وادي-السفر">Wadi Alsafar</h3>
+            <h3 logo_arabic_name="رحلات-العالم">ًWorld Trips</h3>
+            <h3 logo_arabic_name="سكاي-وايز">Sky Ways</h3>
+            <h3 logo_arabic_name="الاجازة-الذهبية">GV</h3>
+            <h3 logo_arabic_name="sstr">SSTR</h3>
+            <h3 logo_arabic_name="اجنحة-نجد">Najd Wings</h3>
+            <h3 logo_arabic_name="ارياف">Ariaf Travel</h3>
+            <h3 logo_arabic_name="اسراب-طيبة">Taiba Flocks</h3>
+            <h3 logo_arabic_name="الطيار">Al Tayyar</h3>
+            <h3 logo_arabic_name="اطلالة">Itlala</h3>
+            <h3 logo_arabic_name="اقلاع">Eqlaa</h3>
+            <h3 logo_arabic_name="اكسي-الخليج">Axie Gulf</h3>
+            <h3 logo_arabic_name="الاجنحة-العالمية">Global Wings</h3>
+            <h3 logo_arabic_name="الرفراف">Alrafraf</h3>
+            <h3 logo_arabic_name="الطايف">Al Taif</h3>
+            <h3 logo_arabic_name="العالي">Alaali</h3>
+            <h3 logo_arabic_name="الرحلة-الذكية">Smart Holiday</h3>
+            <h3 logo_arabic_name="المويد">Al Muayad</h3>
+            <h3 logo_arabic_name="انجاز">Injaz</h3>
+            <h3 logo_arabic_name="انجاز-الاتحاد">Injaz Itihad</h3>
+            <h3 logo_arabic_name="ايفنتس">Events Group</h3>
+            <h3 logo_arabic_name="بقاع-العالم">Beqa Al Alam</h3>
+            <h3 logo_arabic_name="بوابة-العالم">World Gate</h3>
+            <h3 logo_arabic_name="بيرا">Pera</h3>
+            <h3 logo_arabic_name="بيوتي-اند-دريم">Beauty And Dream</h3>
+            <h3 logo_arabic_name="بوابة-الخروج">Exit Gate</h3>
+            <h3 logo_arabic_name="تارجت-جلوبال">Target Global</h3>
+            <h3 logo_arabic_name="رحلات-الرضا">Al Reda</h3>
+            <h3 logo_arabic_name="رحلاتك-دوت-كوم">Rehletk.com</h3>
+            <h3 logo_arabic_name="رحلاتك">Rehletk.com</h3>
+            <h3 logo_arabic_name="سرايا">Saraya</h3>
+            <h3 logo_arabic_name="سفريات-الخليج">Safariat Alkhalij</h3>
+            <h3 logo_arabic_name="سما-المسافر">Sama</h3>
+            <h3 logo_arabic_name="سيزن-ترافل">Season Travel</h3>
+            <h3 logo_arabic_name="عطلات">Otolat</h3>
+            <h3 logo_arabic_name="كون">Koon</h3>
+            <h3 logo_arabic_name="لقطة-سفر">Laqta Travel</h3>
+            <h3 logo_arabic_name="مسارات-العالم">Masarat Alalam</h3>
+            <h3 logo_arabic_name="مغادر">Moghader</h3>
+            <h3 logo_arabic_name="مغادرة">Mughadrah</h3>
+            <h3 logo_arabic_name="مهاراتي">Maharati</h3>
+            <h3 logo_arabic_name="موسم-الرحلات">Travel Season</h3>
+            <h3 logo_arabic_name="نسايم-السفر">Nasaem Alsfr</h3>
+            <h3 logo_arabic_name="وقت-الاحلام">Dreams Time</h3>
+            <h3 logo_arabic_name="وجهات">Wejhat</h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- All Hotel Names -->
+    <div id="property_names_dropdown" class="searchable_names_dropdown_class">
+        <div class="search_bar_div_class">
+            <input type="text" id="property_name_input_id" class="search_bar_input_class" placeholder="بحث.."
+                autocomplete="off">
+        </div>
+        <div class="company_names_options_dropdown_class">
+            <h3>Komaneka Keramas</h3>
+            <h3>Komaneka Tanggayuda</h3>
+            <h3>Samsara Ubud</h3>
+            <h3>Tejaprana</h3>
+            <h3>Ulaman Eco Luxury</h3>
+            <h3>Ulu Segara</h3>
+            <h3>Merusaka Nusa Dua</h3>
+            <h3>Apurva Kempinski</h3>
+            <h3>Merusaka</h3>
+            <h3>Hilton Bali</h3>
+            <h3>The Nest</h3>
+            <h3>Agranusa Signature Villa</h3>
+            <h3>The Trans Bali</h3>
+            <h3>Indigo Bali</h3>
+            <h3>Sini Vie Villa</h3>
+            <h3>Mamaka By Ovolo</h3>
+            <h3>Aryaduta Kuta Bali</h3>
+            <h3>Tribe</h3>
+            <h3>Movenpick Jimbaran</h3>
+            <h3>Umana Bali</h3>
+            <h3>Ascott Jakarta</h3>
+            <h3>Citadines Sudirman</h3>
+            <h3>Somerset Sudirman</h3>
+            <h3>Parkroyal Serviced Suites</h3>
+            <h3>Aloft Wahied Hasiem</h3>
+            <h3>Grand Aston</h3>
+            <h3>Le Eminence</h3>
+            <h3>Courtyard Bandung</h3>
+            <h3>The Trans Luxury</h3>
+            <h3>Kalandara</h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- All Hotel Names -->
+    <div id="total_unit_dropdown" class="searchable_names_dropdown_class">
+        <div class="search_bar_div_class">
+            <input type="text" id="property_name_input_id" class="search_bar_input_class" placeholder="بحث.."
+                autocomplete="off">
+        </div>
+        <div class="company_names_options_dropdown_class">
+            <h3>01 Unit</h3>
+            <h3>02 Unit</h3>
+            <h3>03 Unit</h3>
+            <h3>04 Unit</h3>
+            <h3>05 Unit</h3>
+            <h3>06 Unit</h3>
+            <h3>07 Unit</h3>
+            <h3>08 Unit</h3>
+            <h3>09 Unit</h3>
+            <h3>10 Unit</h3>
+            <h3>11 Unit</h3>
+            <h3>12 Unit</h3>
+            <h3>13 Unit</h3>
+            <h3>14 Unit</h3>
+            <h3>15 Unit</h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1 class="section_title_text"
+        style="text-align: center; background: white; color: black; box-shadow: 0 0 0 0.5px black; margin: 0; cursor: text; padding: 15px 0 10px;">
+        <ion-icon name="arrow-down-circle-outline"></ion-icon> Check Again <ion-icon
+            name="arrow-down-circle-outline"></ion-icon>
+    </h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Choose Hotel Location Section -->
+    <section id="voucher_pdf_file_structure_section">
+
+        <img src="" class="inserted_package_data_section_page_image_class">
+
+
+
+        <div id="voucher_pdf_file_structure_div">
+            <!-- Dynamic JS Code Here -->
+        </div>
+
+
+        <img src="" class="inserted_package_data_section_page_image_class">
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="export_package_pdf_div_id" style="display: none;">
+        <button onclick="openPdfDownloadBox()">Download</button>
+    </div>
+
+
+
+
+    <!-- Choose pdf file name box -->
+    <div id="name_pdf_file_div">
+        <span onclick="closeDownloadPdfBox()">&times;</span>
+        <input type="text" id="pdf_file_name_input_id" placeholder="File Name..?" autocomplete="off">
+        <button id="check_pdf_name_button" onclick="checkThePdfNameToDownload()">Download</button>
+    </div>
+
+
+
+
+
+
+    <!-- Download PDF Link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
+
+    <script src="voucher.js"></script>
+
+
+
+    <!-- Ionicons Append -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
