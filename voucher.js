@@ -529,7 +529,7 @@ enterVoucherData = function () {
     let allPdfContent = `
     
         <div id="voucher_company_logo_div">
-            <img src="https://fanadiq-indonesia.com/صور-الشركات/${companyArabicLogo}.jpg" />
+            <img src="company-logo/${companyLogoSrcReadyText}.jpg" />
         </div>
 
 
@@ -608,7 +608,7 @@ enterVoucherData = function () {
 
         ${!isGreenBackground ? `
         <div id="voucher_property_image_div">
-            <img src="https://fanadiq-indonesia.com/صور-الفنادق/${propertyNameCapitalTextReadyText}.jpg" />
+            <img src="hotel-images/${propertyNameCapitalTextReadyText}.jpg" />
             <h6>${propertyNameInput}</h6>
         </div>` : ''}
     `;
@@ -712,10 +712,15 @@ checkThePdfNameToDownload = function () {
 }
 
 
-/* Download the pdf file with the given name */
+// Function to download the PDF file with a given name
 downloadPdfWithCustomName = function (pdfName) {
     let { jsPDF } = window.jspdf;
     let section = document.getElementById('voucher_pdf_file_structure_section');
+
+    // Ensure pdfName ends with .pdf
+    if (!pdfName.toLowerCase().endsWith('.pdf')) {
+        pdfName += '.pdf';
+    }
 
     // Create a new jsPDF instance with A4 dimensions
     let pdf = new jsPDF('p', 'mm', 'a4');
@@ -757,20 +762,23 @@ downloadPdfWithCustomName = function (pdfName) {
         });
     };
 
-    // Generate PDF with centered content from the voucher section
+    // Show images before capturing the canvas, then generate PDF
+    showImages();
     html2canvas(section, { scale: 2 }).then(canvas => {
-        showImages();
-
         // Add canvas content to PDF
         addContentToPDF(canvas);
 
-        // Save the PDF
+        // Save the PDF with the specified name
         pdf.save(pdfName);
 
         // Hide images after saving the PDF
         hideImages();
+    }).catch(error => {
+        console.error("Error generating PDF:", error);
+        hideImages(); // Ensure images are hidden if an error occurs
     });
 };
+
 
 
 
